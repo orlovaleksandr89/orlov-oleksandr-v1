@@ -1,0 +1,32 @@
+html body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+  min-height: 100%;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto Mono', monospace;
+  /* font-family: 'Roboto Slab', serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body.blur {
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #e9ecef;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: black;
+}

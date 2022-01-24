@@ -1,0 +1,17 @@
+.side {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  left: 40px;
+  right: auto;
+  z-index: 10;
+  color: #fff;
+  margin: 10px 0;
+  writing-mode: tb-rl;
+  transform: rotate(180deg);
+  opacity: 0;
+  transition: opacity 2.5s ease;
+}
+.side.active {
+  opacity: 1;
+}
