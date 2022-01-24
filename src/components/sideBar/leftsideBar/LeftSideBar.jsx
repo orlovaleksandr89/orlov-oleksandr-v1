@@ -1,18 +1,52 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styles from './LeftSideBar.module.css'
+import { useInView } from 'react-intersection-observer'
+import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
 
 function LeftSideBar() {
-  const [show, setShow] = useState(false)
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 1000)
+  const { ref, inView } = useInView({ triggerOnce: true, treshold: 0 })
 
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [])
   return (
-    <div className={show ? `${styles.side} ${styles.active}` : styles.side}>
-      i am left side bar
+    <div
+      ref={ref}
+      className={styles.side}
+      style={{ opacity: inView ? 1 : 0, transition: 'all 1s 3s ease' }}
+    >
+      <ul className={styles.icons}>
+        <div>
+          <li>
+            <a
+              href="https://www.instagram.com/orlov_oleksandr/"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.icon_link}
+            >
+              <FaInstagram />
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.linkedin.com/in/oleksandr-orlov-9b6525108/"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.icon_link}
+            >
+              <FaLinkedin />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/orlovaleksandr89"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.icon_link}
+            >
+              <FaGithub />
+            </a>
+          </li>
+        </div>
+      </ul>
     </div>
   )
 }

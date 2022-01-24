@@ -3,15 +3,45 @@
   position: fixed;
   bottom: 0px;
   left: 40px;
+  height: 40%;
   right: auto;
   z-index: 10;
-  color: #fff;
   margin: 10px 0;
-  writing-mode: tb-rl;
-  transform: rotate(180deg);
   opacity: 0;
   transition: opacity 2.5s ease;
 }
-.side.active {
-  opacity: 1;
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  color: var(--text-white-color);
+}
+.icons::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  margin: 0px;
+  background-color: var(--hover-color);
+}
+
+.icon_link {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  position: relative;
+  font-size: 25px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease-in-out;
+  color: inherit;
+}
+.icon_link:hover {
+  transform: translateY(-4px);
+  color: var(--hover-color);
 }

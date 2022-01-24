@@ -16,7 +16,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #f8f9fa;
+  color: var(--text-white-color);
   pointer-events: auto;
   width: 100%;
 }
@@ -38,7 +38,7 @@ header {
   padding: 0;
 }
 .logo:hover {
-  color: #fda403;
+  color: var(--hover-color);
 }
 
 .ul {
@@ -55,7 +55,7 @@ header {
 .link {
   display: flex;
   justify-content: center;
-  color: #f8f9fa;
+  color: var(--text-white-color);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   background: transparent;
@@ -71,14 +71,14 @@ header {
   content: '';
   width: 0;
   height: 1px;
-  background: #fda403;
+  background: var(--hover-color);
   position: absolute;
   bottom: -4px;
   visibility: visible;
   transition: width 0.2s ease;
 }
 .link:hover {
-  color: #fda403;
+  color: var(--hover-color);
 }
 .link:hover::before {
   width: 100%;
@@ -102,7 +102,7 @@ header {
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #f8f9fa;
+  background-color: var(--text-white-color);
 }
 
 .icon_menu span:first-child {
@@ -170,7 +170,7 @@ header {
     background-color: #577590;
   }
   .link {
-    color: #f8f9fa;
+    color: var(--text-white-color);
     margin-top: 25px;
     line-height: 1.3;
     font-size: 1.5em;

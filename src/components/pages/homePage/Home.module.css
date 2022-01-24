@@ -4,9 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000;
-  color: #fff;
-  padding: 0 35px;
   letter-spacing: 1px;
 }
 .hello {
@@ -14,5 +11,36 @@
   margin-bottom: 25px;
   font-size: 1.7rem;
   font-weight: 400;
-  color: #fca311;
+  color: var(--hover-color);
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark-color);
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+}
+.second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark-color);
+  color: var(--text-white-color);
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+}
+.third {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark-color);
+  color: var(--text-white-color);
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
 }

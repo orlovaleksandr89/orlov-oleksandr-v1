@@ -1,16 +1,12 @@
 import React from 'react'
 import AppRouter from './components/AppRouter'
-import NavBar from './components/navbar'
-import { LeftSideBar, RightSideBar } from './components/sideBar'
+import Layout from './components/UI/Layout/Layout'
 
 function App() {
   return (
-    <>
-      <NavBar />
+    <Layout>
       <AppRouter />
-      <LeftSideBar />
-      <RightSideBar />
-    </>
+    </Layout>
   )
 }
 

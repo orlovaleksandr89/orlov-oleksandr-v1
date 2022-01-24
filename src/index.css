@@ -1,3 +1,16 @@
+:root {
+  --hover-color: #fca311;
+  --bg-dark-color: #000;
+  --text-white-color: #fff;
+}
+html {
+  font-family: sans-serif;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 html body {
   margin: 0;
   padding: 0;
@@ -7,7 +20,6 @@ html body {
   width: 100%;
   -webkit-font-smoothing: antialiased;
   font-family: 'Roboto Mono', monospace;
-  /* font-family: 'Roboto Slab', serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

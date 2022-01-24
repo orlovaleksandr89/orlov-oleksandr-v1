@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
+import { useInView } from 'react-intersection-observer'
 
 function NavBar() {
+  const { ref, inView } = useInView({
+    triggerOnce: true
+  })
   const [show, setShow] = useState(false)
 
   const toggleNavHandler = () => {
@@ -12,7 +16,10 @@ function NavBar() {
   }
 
   return (
-    <header>
+    <header
+      ref={ref}
+      style={{ opacity: inView ? 1 : 0, transition: 'all 1s 3s ease' }}
+    >
       <nav className={styles.nav}>
         <div className={styles.logo}>Oleksandr Orlov</div>
 
