@@ -13,6 +13,9 @@
   font-weight: 400;
   color: var(--hover-color);
 }
+.hello:first-child {
+  font-size: 2.7rem;
+}
 
 .first {
   display: flex;
@@ -22,17 +25,17 @@
   background-color: var(--bg-dark-color);
   height: 100vh;
   width: 100%;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 .second {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-dark-color);
-  color: var(--text-white-color);
+  background-color: var(--text-white-color);
+  color: var(--bg-dark-color);
   height: 100vh;
   width: 100%;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 .third {
   display: flex;
@@ -42,5 +45,5 @@
   color: var(--text-white-color);
   height: 100vh;
   width: 100%;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }

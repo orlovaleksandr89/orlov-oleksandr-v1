@@ -8,8 +8,7 @@ function RightSideBar() {
   return (
     <div
       ref={ref}
-      className={styles.side}
-      style={{ opacity: inView ? 1 : 0, transition: 'all 1s 3s ease' }}
+      className={inView ? styles.side : `${styles.side} ${styles.hide}`}
     >
       <div className={styles.email}>orlovaleksandr89@gmail.com</div>
     </div>

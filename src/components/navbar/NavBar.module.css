@@ -8,6 +8,14 @@ header {
   height: 65px;
   z-index: 11;
   width: 100%;
+  mix-blend-mode: difference;
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 1s 3s ease-in-out;
+}
+header.hide {
+  opacity: 0;
+  transform: translateY(-65px);
 }
 
 .nav {
@@ -19,6 +27,11 @@ header {
   color: var(--text-white-color);
   pointer-events: auto;
   width: 100%;
+  transform: translateY(0);
+  transition: all 1s ease-in-out;
+}
+.nav.up {
+  transform: translateY(-65px);
 }
 .logo {
   display: flex;
@@ -64,7 +77,6 @@ header {
   font-size: 1.3em;
   font-weight: 300;
   position: relative;
-  transition: all 0.2s ease;
 }
 
 .link::before {
@@ -75,6 +87,7 @@ header {
   position: absolute;
   bottom: -4px;
   visibility: visible;
+
   transition: width 0.2s ease;
 }
 .link:hover {
@@ -128,7 +141,10 @@ header {
   display: none;
 }
 
-@media (max-width: 805px) {
+@media screen and (max-width: 768px) {
+  header {
+    mix-blend-mode: normal;
+  }
   .icon_menu {
     display: block;
   }
@@ -141,10 +157,11 @@ header {
     position: fixed;
     width: 100%;
     height: 100vh;
-    top: 0px;
+    top: 0;
     left: 0;
     transition: all 0.2s ease-in-out;
     backdrop-filter: blur(0px);
+    isolation: isolate;
   }
   .backdrop.active {
     backdrop-filter: blur(5px);

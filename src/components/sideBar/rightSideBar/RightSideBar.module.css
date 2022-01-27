@@ -8,8 +8,13 @@
   color: #fff;
   margin: 10px 0;
   writing-mode: tb-rl;
+  opacity: 1;
+  transition: all 1s 3s ease-in-out;
+  mix-blend-mode: difference;
+}
+.side.hide {
+  right: -40px;
   opacity: 0;
-  transition: opacity 2.5s ease;
 }
 .email {
   display: flex;
@@ -23,4 +28,10 @@
 .email:hover {
   transform: translateY(-4px);
   color: var(--hover-color);
+}
+
+@media screen and (max-width: 768px) {
+  .side {
+    right: 20px;
+  }
 }

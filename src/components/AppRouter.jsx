@@ -10,10 +10,10 @@ function AppRouter() {
       <Route path="/" exact>
         <Home />
       </Route>
-      <Route path="/contact" exact>
+      <Route path="/second" exact>
         <Contact />
       </Route>
-      <Route path="/projects" exact>
+      <Route path="/third" exact>
         <Projects />
       </Route>
     </Switch>

@@ -4,10 +4,10 @@
   --text-white-color: #fff;
 }
 html {
-  font-family: sans-serif;
-  scroll-snap-type: mandatory;
+  /* font-family: sans-serif; */
+  /* scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
 }
 
@@ -15,7 +15,7 @@ html body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   min-height: 100%;
   width: 100%;
   -webkit-font-smoothing: antialiased;

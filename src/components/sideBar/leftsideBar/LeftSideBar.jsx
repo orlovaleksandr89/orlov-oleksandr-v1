@@ -9,8 +9,7 @@ function LeftSideBar() {
   return (
     <div
       ref={ref}
-      className={styles.side}
-      style={{ opacity: inView ? 1 : 0, transition: 'all 1s 3s ease' }}
+      className={inView ? styles.side : `${styles.side} ${styles.hide}`}
     >
       <ul className={styles.icons}>
         <div>

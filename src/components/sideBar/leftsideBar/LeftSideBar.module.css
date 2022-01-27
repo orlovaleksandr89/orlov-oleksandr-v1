@@ -7,8 +7,13 @@
   right: auto;
   z-index: 10;
   margin: 10px 0;
+  opacity: 1;
+  transition: all 1s 3s ease-in-out;
+  mix-blend-mode: difference;
+}
+.side.hide {
+  left: -40px;
   opacity: 0;
-  transition: opacity 2.5s ease;
 }
 .icons {
   display: flex;
@@ -19,8 +24,6 @@
   margin: 0;
   padding: 0;
   height: 100%;
-
-  color: var(--text-white-color);
 }
 .icons::after {
   content: '';
@@ -39,9 +42,16 @@
   font-size: 25px;
   margin-bottom: 16px;
   transition: all 0.3s ease-in-out;
-  color: inherit;
+  color: var(--text-white-color);
+  isolation: isolate;
 }
 .icon_link:hover {
   transform: translateY(-4px);
   color: var(--hover-color);
+}
+
+@media screen and (max-width: 768px) {
+  .side {
+    left: 20px;
+  }
 }

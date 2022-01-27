@@ -1,50 +1,57 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
 import { useInView } from 'react-intersection-observer'
+import { useScrollDirection } from '../../hooks'
 
 function NavBar() {
   const { ref, inView } = useInView({
     triggerOnce: true
   })
+  const scrollDirection = useScrollDirection('down')
   const [show, setShow] = useState(false)
+  const [scrolledToTop, setScrolledToTop] = useState(true)
 
   const toggleNavHandler = () => {
     const body = document.querySelector('body')
     body.classList.toggle('blur')
     setShow((prev) => !prev)
   }
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50)
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener(handleScroll)
+    }
+  }, [])
 
   return (
-    <header
-      ref={ref}
-      style={{ opacity: inView ? 1 : 0, transition: 'all 1s 3s ease' }}
-    >
-      <nav className={styles.nav}>
+    <header ref={ref} className={inView ? '' : styles.hide}>
+      <nav
+        className={
+          scrolledToTop || scrollDirection === 'up'
+            ? styles.nav
+            : `${styles.nav} ${styles.up}`
+        }
+      >
         <div className={styles.logo}>Oleksandr Orlov</div>
 
         <div className={styles.list}>
           <ul className={styles.ul}>
             <li>
-              <Link className={styles.link} onClick={toggleNavHandler} to="/">
+              <Link className={styles.link} to="/">
                 Home
               </Link>
             </li>
             <li>
-              <Link
-                className={styles.link}
-                onClick={toggleNavHandler}
-                to="/projects"
-              >
+              <Link className={styles.link} to="/second">
                 Projects
               </Link>
             </li>
             <li>
-              <Link
-                className={styles.link}
-                onClick={toggleNavHandler}
-                to="/contact"
-              >
+              <Link className={styles.link} to="/third">
                 Contact me
               </Link>
             </li>

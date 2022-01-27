@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import render from '../../../utils/renderHello'
 import styles from './Home.module.css'
 import { useInView } from 'react-intersection-observer'
+import Contact from '../Contact'
+import Projects from '../Projects'
 
 function Home() {
   const { ref, inView } = useInView({
@@ -26,7 +28,7 @@ function Home() {
     <>
       <main className={styles.container}>
         <div className={styles.first}>
-          <div ref={helloRef} className={styles.hello}></div>
+          <code ref={helloRef} className={styles.hello}></code>
           <div ref={nameRef} className={styles.hello}></div>
         </div>
         <div className={styles.second}>
@@ -34,10 +36,12 @@ function Home() {
             ref={ref}
             style={{ opacity: inView ? 1 : 0, transition: 'all 1s ease' }}
           >
-            Another div
+            <Projects />
           </div>
         </div>
-        <div className={styles.third}></div>
+        <div className={styles.third}>
+          <Contact />
+        </div>
       </main>
     </>
   )
