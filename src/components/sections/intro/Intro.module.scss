@@ -1,0 +1,26 @@
+.hello {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--hover-color);
+  font-family: var(--font-sans);
+
+  &:first-child {
+    font-size: 1.7rem;
+  }
+  &:last-child {
+    font-size: 2.7rem;
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark-color);
+  height: 100vh;
+  width: 100%;
+  /* scroll-snap-align: start; */
+}

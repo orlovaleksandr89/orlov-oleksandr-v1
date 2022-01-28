@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import styles from './NavBar.module.css'
+import styles from './NavBar.module.scss'
 import { useInView } from 'react-intersection-observer'
 import { useScrollDirection } from '../../hooks'
+import { links } from '../../config'
+import NavLink from '../common/navLink'
 
 function NavBar() {
   const { ref, inView } = useInView({
@@ -28,7 +29,10 @@ function NavBar() {
   }, [])
 
   return (
-    <header ref={ref} className={inView ? '' : styles.hide}>
+    <header
+      ref={ref}
+      className={inView ? styles.header : `${styles.header} ${styles.hide}`}
+    >
       <nav
         className={
           scrolledToTop || scrollDirection === 'up'
@@ -40,21 +44,9 @@ function NavBar() {
 
         <div className={styles.list}>
           <ul className={styles.ul}>
-            <li>
-              <Link className={styles.link} to="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className={styles.link} to="/second">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link className={styles.link} to="/third">
-                Contact me
-              </Link>
-            </li>
+            {links.map((link) => {
+              return <NavLink key={link.path} {...link} />
+            })}
           </ul>
         </div>
         <div
@@ -76,23 +68,11 @@ function NavBar() {
           }
         >
           <ul className={styles.ul}>
-            <Link className={styles.link} onClick={toggleNavHandler} to="/">
-              Home
-            </Link>
-            <Link
-              className={styles.link}
-              onClick={toggleNavHandler}
-              to="/projects"
-            >
-              Projects
-            </Link>
-            <Link
-              className={styles.link}
-              onClick={toggleNavHandler}
-              to="/contact"
-            >
-              Contact me
-            </Link>
+            {links.map((link) => {
+              return (
+                <NavLink key={link.path} {...link} onClick={toggleNavHandler} />
+              )
+            })}
           </ul>
         </aside>
       </nav>

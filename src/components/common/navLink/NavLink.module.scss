@@ -1,0 +1,37 @@
+.link {
+  display: flex;
+  justify-content: center;
+  color: var(--text-white-color);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  background: transparent;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  font-size: 1;
+  font-weight: 300;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 1px;
+    background: var(--hover-color);
+    position: absolute;
+    bottom: -4px;
+    visibility: visible;
+
+    transition: width 0.2s ease;
+  }
+  &:hover {
+    color: var(--hover-color);
+    &::before {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    color: var(--text-white-color);
+    margin-top: 25px;
+    line-height: 1.3;
+    font-size: 1.5em;
+  }
+}

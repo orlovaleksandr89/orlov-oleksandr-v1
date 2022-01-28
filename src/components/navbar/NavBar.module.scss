@@ -1,4 +1,4 @@
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,14 +8,18 @@ header {
   height: 65px;
   z-index: 11;
   width: 100%;
-  mix-blend-mode: difference;
   transform: translateY(0);
   opacity: 1;
   transition: all 1s 3s ease-in-out;
-}
-header.hide {
-  opacity: 0;
-  transform: translateY(-65px);
+  mix-blend-mode: difference;
+
+  &.hide {
+    opacity: 0;
+    transform: translateY(-65px);
+  }
+  &:hover .nav {
+    transform: translateY(0);
+  }
 }
 
 .nav {
@@ -29,9 +33,9 @@ header.hide {
   width: 100%;
   transform: translateY(0);
   transition: all 1s ease-in-out;
-}
-.nav.up {
-  transform: translateY(-65px);
+  &.up {
+    transform: translateY(-65px);
+  }
 }
 .logo {
   display: flex;
@@ -64,37 +68,6 @@ header.hide {
 }
 .ul li {
   padding-left: 20px;
-}
-.link {
-  display: flex;
-  justify-content: center;
-  color: var(--text-white-color);
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  background: transparent;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  font-size: 1.3em;
-  font-weight: 300;
-  position: relative;
-}
-
-.link::before {
-  content: '';
-  width: 0;
-  height: 1px;
-  background: var(--hover-color);
-  position: absolute;
-  bottom: -4px;
-  visibility: visible;
-
-  transition: width 0.2s ease;
-}
-.link:hover {
-  color: var(--hover-color);
-}
-.link:hover::before {
-  width: 100%;
 }
 
 .icon_menu {

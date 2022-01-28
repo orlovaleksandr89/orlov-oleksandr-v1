@@ -13,7 +13,7 @@ const flipLetter = (node, letter) => {
   }, 30)
 }
 
-const render = (hello, string) => {
+const render = (hello, string, delay = 60) => {
   let timer
   return string.split('').map((letter, i, arr) => {
     timer = setTimeout(() => {
@@ -21,7 +21,7 @@ const render = (hello, string) => {
       objToAppend.textContent = letter
       hello.append(objToAppend)
       return flipLetter(objToAppend, letter)
-    }, i * 60)
+    }, i * delay)
     return i === arr.length && clearTimeout(timer)
   })
 }

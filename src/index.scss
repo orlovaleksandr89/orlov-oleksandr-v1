@@ -2,6 +2,11 @@
   --hover-color: #fca311;
   --bg-dark-color: #000;
   --text-white-color: #fff;
+  --bg-light-color: #e9ecef;
+  --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system,
+    system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  --font-roboto: 'Roboto Mono', monospace;
 }
 html {
   /* font-family: sans-serif; */
@@ -15,11 +20,11 @@ html body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   min-height: 100%;
   width: 100%;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-roboto);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,10 +40,10 @@ body::-webkit-scrollbar {
   width: 12px;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #e9ecef;
-  border: 3px solid black;
+  background-color: var(--bg-light-color);
+  border: 3px solid var(--bg-dark-color);
   border-radius: 10px;
 }
 body::-webkit-scrollbar-track {
-  background: black;
+  background: var(--bg-dark-color);
 }
