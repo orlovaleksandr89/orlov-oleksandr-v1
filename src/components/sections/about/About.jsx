@@ -1,10 +1,19 @@
 import React from 'react'
 import styles from './About.module.scss'
+import { useInView } from 'react-intersection-observer'
 
 function About() {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    treshold: 0,
+    rootMargin: '-50%'
+  })
+  console.log(inView)
   return (
-    <div className={styles.container}>
-      <section className={styles.section}>
+    <div className={styles.container} ref={ref}>
+      <section
+        className={inView ? `${styles.section} ${styles.show}` : styles.section}
+      >
         <h2 className={styles.title}>About me</h2>
         <div className={styles.inner}>
           <div className={styles.about}>
