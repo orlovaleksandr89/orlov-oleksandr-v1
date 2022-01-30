@@ -10,7 +10,7 @@
   width: 100%;
   transform: translateY(0);
   opacity: 1;
-  transition: all 1s 3s ease-in-out;
+  transition: var(--main-transition);
   mix-blend-mode: difference;
 
   &.hide {

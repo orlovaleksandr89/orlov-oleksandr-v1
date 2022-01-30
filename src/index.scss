@@ -7,6 +7,8 @@
     system-ui, sans-serif;
   --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
   --font-roboto: 'Roboto Mono', monospace;
+
+  --main-transition: all 1s 2s ease-in-out;
 }
 html {
   /* font-family: sans-serif; */
@@ -29,7 +31,7 @@ html body {
   -moz-osx-font-smoothing: grayscale;
 }
 body.blur {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 code {
@@ -46,4 +48,8 @@ body::-webkit-scrollbar-thumb {
 }
 body::-webkit-scrollbar-track {
   background: var(--bg-dark-color);
+}
+
+.html5 {
+  background: #ae2012;
 }

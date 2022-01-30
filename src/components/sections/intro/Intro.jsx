@@ -16,7 +16,7 @@ function Intro() {
     }
   }, [])
   return (
-    <div className={styles.page}>
+    <div className={styles.page} id="home">
       <code ref={helloRef} className={styles.hello}></code>
       <div ref={nameRef} className={styles.hello}></div>
     </div>

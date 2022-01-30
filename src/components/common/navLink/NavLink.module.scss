@@ -15,12 +15,12 @@
     content: '';
     width: 0;
     height: 1px;
+    left: 0;
     background: var(--hover-color);
     position: absolute;
     bottom: -4px;
     visibility: visible;
-
-    transition: width 0.2s ease;
+    transition: width 0.3s ease;
   }
   &:hover {
     color: var(--hover-color);

@@ -9,7 +9,7 @@
   margin: 10px 0;
   writing-mode: tb-rl;
   opacity: 1;
-  transition: all 1s 3s ease-in-out;
+  transition: var(--main-transition);
   mix-blend-mode: difference;
 }
 .side.hide {
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;

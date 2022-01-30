@@ -1,0 +1,15 @@
+.icon_link {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  position: relative;
+  font-size: 25px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease-in-out;
+  color: var(--text-white-color);
+  isolation: isolate;
+  &:hover {
+    transform: translateY(-4px);
+    color: var(--hover-color);
+  }
+}

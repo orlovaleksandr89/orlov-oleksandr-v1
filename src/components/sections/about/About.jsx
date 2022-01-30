@@ -1,16 +1,17 @@
 import React from 'react'
 import styles from './About.module.scss'
 import { useInView } from 'react-intersection-observer'
+import img from '../../../assets/me_opt.jpg'
+import { skills } from '../../../config'
 
 function About() {
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     treshold: 0,
     rootMargin: '-50%'
   })
-  console.log(inView)
   return (
-    <div className={styles.container} ref={ref}>
+    <div className={styles.container} ref={ref} id="about">
       <section
         className={inView ? `${styles.section} ${styles.show}` : styles.section}
       >
@@ -19,23 +20,37 @@ function About() {
           <div className={styles.about}>
             <p>
               Hello, my name is Oleksandr. I am a passionate self-taught
-              front-end developer.
+              frontend developer.
             </p>
             <p>
-              My journey as a frontend develover started in 2020. Since then I
-              discovered a beautiful things abou the web.
+              My journey as a frontend develover started in 2021. Since then I
+              discovered many beautiful things about the web.
+            </p>
+            <p>
+              I&apos;m not afraid of difficult tasks. Nice guy who understands
+              JS basics and love to code.
             </p>
             <p className={styles.p_bg}>
-              Here are a few technologies I’ve been working with recently:
+              Here are a few technologies I&apos;ve been working with recently:
             </p>
-            <ul>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>React.js</li>
-              <li>Redux.js</li>
+            <ul className={styles.ul}>
+              {skills.map((item) => {
+                return (
+                  <li key={item.title} className={styles.ul_li}>
+                    <span>{item.icon}</span>{' '}
+                    <span className={styles.ul_li_title}>{item.title}</span>
+                  </li>
+                )
+              })}
             </ul>
           </div>
-          <div className={styles.hero}></div>
+          <div className={styles.hero}>
+            <img
+              src={img}
+              alt="Oleksandr Orlov image"
+              className={styles.hero_img}
+            />
+          </div>
         </div>
       </section>
     </div>

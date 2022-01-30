@@ -8,7 +8,7 @@
   z-index: 10;
   margin: 10px 0;
   opacity: 1;
-  transition: all 1s 3s ease-in-out;
+  transition: var(--main-transition);
   mix-blend-mode: difference;
 }
 .side.hide {
@@ -32,22 +32,6 @@
   height: 100%;
   margin: 0px;
   background-color: var(--hover-color);
-}
-
-.icon_link {
-  display: inline-block;
-  text-decoration: none;
-  text-decoration-skip-ink: auto;
-  position: relative;
-  font-size: 25px;
-  margin-bottom: 16px;
-  transition: all 0.3s ease-in-out;
-  color: var(--text-white-color);
-  isolation: isolate;
-}
-.icon_link:hover {
-  transform: translateY(-4px);
-  color: var(--hover-color);
 }
 
 @media screen and (max-width: 768px) {
