@@ -11,6 +11,7 @@ function Projects() {
   return (
     <div
       ref={ref}
+      id="projects"
       className={inView ? styles.page : `${styles.page} ${styles.show}`}
     >
       Projects

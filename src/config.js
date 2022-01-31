@@ -13,6 +13,7 @@ import React from 'react'
 export const links = [
   { title: 'Home', path: '#home' },
   { title: 'About', path: '#about' },
+  { title: 'Expiriense', path: '#projects' },
   { title: 'Contact me', path: '#contact' }
 ]
 

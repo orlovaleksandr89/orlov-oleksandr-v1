@@ -1,14 +1,15 @@
 import React from 'react'
-import Contact from '../contact/Contact'
+import Contact from '../../sections/contact/Contact'
 import Intro from '../../sections/intro'
 import About from '../../sections/about'
-// import { useLocation } from 'react-router-dom'
+import Projects from '../../sections/projects/Projects'
 
 function Home() {
   return (
     <>
       <Intro />
       <About />
+      <Projects />
       <Contact />
     </>
   )

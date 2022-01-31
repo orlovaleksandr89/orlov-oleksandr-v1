@@ -5,12 +5,12 @@ import { LeftSideBar, RightSideBar } from '../../sideBar'
 
 function Layout({ children }) {
   return (
-    <>
+    <main>
       <NavBar />
       <LeftSideBar />
       <RightSideBar />
       {children}
-    </>
+    </main>
   )
 }
 Layout.propTypes = {
