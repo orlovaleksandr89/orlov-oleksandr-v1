@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './About.module.scss'
 import { useInView } from 'react-intersection-observer'
-import img from '../../../assets/me_opt.jpg'
+import img from '../../../assets/me.jpg'
 import { skills } from '../../../config'
 
 function About() {

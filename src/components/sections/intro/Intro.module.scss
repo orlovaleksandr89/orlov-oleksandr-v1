@@ -1,20 +1,63 @@
-.hello {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.7rem;
-  font-weight: 500;
-  color: var(--hover-color);
-  font-family: var(--font-mono);
-  text-transform: uppercase;
+.hello_wrapper {
+  height: 100%;
+  font-size: 3.7rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  background: linear-gradient(to left top, #7d118b, var(--hover-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .hello {
+    margin: 0 0 auto 0;
+    &:first-child {
+      margin: auto 0 0 0;
+    }
+  }
 }
 
 .page {
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('../../../assets/Hexagon.svg');
-  height: 100vh;
-  width: 100%;
+  background: url('../../../assets/Hexagon.svg') no-repeat;
+  background-size: cover;
+  position: relative;
   /* scroll-snap-align: start; */
+}
+
+.btn_wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 35px;
+  margin-top: auto;
+  .btn {
+    background-color: transparent;
+    height: 40px;
+    font-size: 1.2rem;
+    color: var(--hover-color);
+    width: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--hover-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: var(--main-transition);
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}
+
+.animate__animated.animate__bounce {
+  --animate-duration: 2s;
 }

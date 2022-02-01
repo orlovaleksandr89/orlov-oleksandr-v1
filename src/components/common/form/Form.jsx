@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Form.module.scss'
 import { useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
+import loader from '../../../assets/loader.gif'
 
-function Form({ submitHandle }) {
+function Form({ submitHandle, loading }) {
+  const [submitted, setSubmitted] = useState(false)
   const {
     register,
     handleSubmit,
@@ -15,8 +17,10 @@ function Form({ submitHandle }) {
     if (errors.length > 0) {
       return
     }
+    setSubmitted(true)
     submitHandle(data)
     reset({ firstName: '', email: '', body: '' })
+    setSubmitted(false)
   }
 
   return (
@@ -55,15 +59,24 @@ function Form({ submitHandle }) {
         />
       </div>
       <div className={styles.form_button_wrapper}>
-        <button className={styles.form_button} type="submit">
-          Submit
+        {loading && <div className={styles.form_status}>Loading</div>}
+        <button className={styles.form_button} type="submit" disabled={loading}>
+          {'Submit'}
         </button>
+      </div>
+      <div
+        className={
+          submitted ? `${styles.backdrop} ${styles.submitted}` : styles.backdrop
+        }
+      >
+        <img src={loader} alt="" className={styles.backdrop_spinner} />
       </div>
     </form>
   )
 }
 Form.propTypes = {
-  submitHandle: PropTypes.func.isRequired
+  submitHandle: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired
 }
 
 export default Form
