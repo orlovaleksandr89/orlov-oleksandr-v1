@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styles from './NavBar.module.scss'
 import { useInView } from 'react-intersection-observer'
 import { useScrollDirection } from '../../hooks'
@@ -13,14 +13,16 @@ function NavBar() {
   const [show, setShow] = useState(false)
   const [scrolledToTop, setScrolledToTop] = useState(true)
 
-  const toggleNavHandler = () => {
+  const toggleNavHandler = useCallback(() => {
     const body = document.querySelector('body')
     body.classList.toggle('blur')
     setShow((prev) => !prev)
-  }
+  }, [])
+
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50)
   }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => {

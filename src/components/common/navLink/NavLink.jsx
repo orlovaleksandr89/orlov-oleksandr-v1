@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import styles from './NavLink.module.scss'
@@ -27,4 +27,4 @@ NavLink.propTypes = {
   onClick: PropTypes.func
 }
 
-export default NavLink
+export default memo(NavLink)

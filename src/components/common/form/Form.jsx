@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Form.module.scss'
 import { useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
@@ -13,14 +13,26 @@ function Form({ submitHandle, loading }) {
     formState: { errors }
   } = useForm()
 
-  const onSubmit = (data) => {
-    if (errors.length > 0) {
-      return
+  useEffect(() => {
+    const clearFormTimer = setTimeout(() => setSubmitted(false), 3500)
+
+    return () => {
+      clearTimeout(clearFormTimer)
     }
-    setSubmitted(true)
-    submitHandle(data)
-    reset({ firstName: '', email: '', body: '' })
+  }, [submitted])
+
+  const onSubmit = async (data) => {
     setSubmitted(false)
+    try {
+      if (errors.length > 0) {
+        return
+      }
+      await submitHandle(data)
+      reset({ firstName: '', email: '', body: '' })
+      setSubmitted(true)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -59,14 +71,20 @@ function Form({ submitHandle, loading }) {
         />
       </div>
       <div className={styles.form_button_wrapper}>
-        {loading && <div className={styles.form_status}>Loading</div>}
+        {submitted && (
+          <div className={styles.form_status}>
+            You successfully sent email. I get back to you asap. Thanks
+          </div>
+        )}
         <button className={styles.form_button} type="submit" disabled={loading}>
           {'Submit'}
         </button>
       </div>
+
+      {/* backfrop */}
       <div
         className={
-          submitted ? `${styles.backdrop} ${styles.submitted}` : styles.backdrop
+          loading ? `${styles.backdrop} ${styles.loading}` : styles.backdrop
         }
       >
         <img src={loader} alt="" className={styles.backdrop_spinner} />
