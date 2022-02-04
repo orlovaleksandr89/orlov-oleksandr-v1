@@ -77,7 +77,7 @@ function Form({ submitHandle, loading }) {
           </div>
         )}
         <button className={styles.form_button} type="submit" disabled={loading}>
-          {'Submit'}
+          Send message
         </button>
       </div>
 

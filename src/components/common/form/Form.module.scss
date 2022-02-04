@@ -3,22 +3,24 @@
   flex-direction: column;
   width: 100%;
   max-width: 600px;
-  margin: 25px;
+  margin: 0 auto;
   padding: 20px;
   position: relative;
   isolation: isolate;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.22);
   &_input_group {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    color: var(--text-white-color);
+    letter-spacing: 2px;
     .input {
       margin-top: 10px;
       font-size: 16px;
       font-family: inherit;
       padding: 0.25em 0.5em;
-      background-color: #fff;
+      background-color: var(--text-white-color);
       border: 1px solid #8b8a8b;
       border-radius: 4px;
       outline: none;
@@ -30,7 +32,7 @@
       }
       &:focus {
         border: 1px solid transparent;
-        box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 0px 2px rgba(255, 188, 18, 1);
       }
     }
   }
@@ -64,12 +66,12 @@ textarea.input {
     border: none;
     transform: scale(1);
     letter-spacing: 0.4px;
-    box-shadow: 0 0 0 #000;
+    // box-shadow: 0 0 0 var(--bg-light-color);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     &:hover {
-      transform: scale(1.01);
-      box-shadow: 0.3em 0.3em 0.75em #000;
+      transform: scale(1.07);
+      // box-shadow: 0.3em 0.3em 0.75em var(--bg-light-color);
     }
   }
 }
@@ -79,8 +81,8 @@ textarea.input {
   position: absolute;
   inset: 0;
   width: 100%;
-  background-color: #000;
-  box-shadow: 5px 5px 15px #000;
+  background-color: var(--bg-light-color);
+  box-shadow: 5px 5px 15px var(--bg-light-color);
   opacity: 0.1;
   height: 100%;
   align-items: center;
@@ -93,7 +95,6 @@ textarea.input {
     display: flex;
     z-index: 1;
     opacity: 0.3;
-    // box-shadow: 0px 0px 5px 10px #000;
 
     .backdrop_spinner {
       height: 100px;

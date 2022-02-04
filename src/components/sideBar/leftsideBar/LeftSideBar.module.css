@@ -9,7 +9,6 @@
   margin: 10px 0;
   opacity: 1;
   transition: var(--main-transition);
-  mix-blend-mode: difference;
 }
 .side.hide {
   left: -40px;

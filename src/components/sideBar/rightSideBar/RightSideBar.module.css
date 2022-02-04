@@ -10,7 +10,6 @@
   writing-mode: tb-rl;
   opacity: 1;
   transition: var(--main-transition);
-  mix-blend-mode: difference;
 }
 .side.hide {
   right: -40px;
