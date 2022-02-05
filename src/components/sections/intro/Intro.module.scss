@@ -55,9 +55,21 @@
     &.show {
       opacity: 1;
     }
+    &:hover {
+      animation: bounce 1s ease-in infinite;
+    }
   }
 }
 
-.animate__animated.animate__bounce {
-  --animate-duration: 2s;
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }

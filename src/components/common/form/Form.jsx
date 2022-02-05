@@ -4,8 +4,9 @@ import { useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import loader from '../../../assets/loader.gif'
 
-function Form({ submitHandle, loading }) {
+function Form({ submitHandle, loading, status, setFormSubmitStatus }) {
   const [submitted, setSubmitted] = useState(false)
+  const { message, success } = status
   const {
     register,
     handleSubmit,
@@ -14,7 +15,10 @@ function Form({ submitHandle, loading }) {
   } = useForm()
 
   useEffect(() => {
-    const clearFormTimer = setTimeout(() => setSubmitted(false), 3500)
+    const clearFormTimer = setTimeout(() => {
+      setSubmitted(false)
+      setFormSubmitStatus({})
+    }, 3500)
 
     return () => {
       clearTimeout(clearFormTimer)
@@ -72,8 +76,12 @@ function Form({ submitHandle, loading }) {
       </div>
       <div className={styles.form_button_wrapper}>
         {submitted && (
-          <div className={styles.form_status}>
-            You successfully sent email. I get back to you asap. Thanks
+          <div
+            className={
+              success === 'true' ? styles.form_status : styles.form_error
+            }
+          >
+            {message}
           </div>
         )}
         <button className={styles.form_button} type="submit" disabled={loading}>
@@ -81,7 +89,7 @@ function Form({ submitHandle, loading }) {
         </button>
       </div>
 
-      {/* backfrop */}
+      {/* backdrop */}
       <div
         className={
           loading ? `${styles.backdrop} ${styles.loading}` : styles.backdrop
@@ -94,7 +102,9 @@ function Form({ submitHandle, loading }) {
 }
 Form.propTypes = {
   submitHandle: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired,
+  status: PropTypes.object.isRequired,
+  setFormSubmitStatus: PropTypes.func.isRequired
 }
 
 export default Form
