@@ -6,15 +6,17 @@ function Projects() {
   const { ref, inView } = useInView({
     threshold: 0.5,
     rootMargin: '-100px 0px',
-    triggerOnce: true
+    triggerOnce: false
   })
   return (
-    <div
-      ref={ref}
-      id="projects"
-      className={inView ? styles.page : `${styles.page} ${styles.show}`}
-    >
-      Projects
+    <div ref={ref} id="projects" className={styles.page}>
+      <div
+        className={
+          inView ? `${styles.projects} ${styles.show}` : styles.projects
+        }
+      >
+        Comming soon
+      </div>
     </div>
   )
 }

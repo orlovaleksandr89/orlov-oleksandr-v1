@@ -8,12 +8,13 @@ import {
 } from 'react-icons/fa'
 import { DiJavascript1 } from 'react-icons/di'
 import { SiRedux } from 'react-icons/si'
+import { BsTelegram } from 'react-icons/bs'
 import React from 'react'
 
 export const links = [
   { title: 'Home', path: '#home' },
   { title: 'About', path: '#about' },
-  { title: 'Expiriense', path: '#projects' },
+  { title: 'Projects', path: '#projects' },
   { title: 'Contact me', path: '#contact' }
 ]
 
@@ -29,6 +30,10 @@ export const icons = [
   {
     href: 'https://github.com/orlovaleksandr89',
     component: <FaGithub />
+  },
+  {
+    href: 'https://t.me/AlexOrlov89',
+    component: <BsTelegram />
   }
 ]
 

@@ -35,6 +35,6 @@
 
 @media screen and (max-width: 768px) {
   .side {
-    left: 20px;
+    display: none;
   }
 }

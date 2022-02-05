@@ -69,7 +69,7 @@ function NavBar() {
             show ? `${styles.backdrop} ${styles.active}` : styles.backdrop
           }
         >
-          <ul className={styles.ul}>
+          <ul className={show ? `${styles.ul} ${styles.active}` : styles.ul}>
             {links.map((link) => {
               return (
                 <NavLink key={link.path} {...link} onClick={toggleNavHandler} />

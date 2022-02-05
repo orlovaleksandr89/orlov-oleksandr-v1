@@ -7,6 +7,13 @@
   height: 100vh;
   width: 100%;
 }
-.page.show {
+
+.projects {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-in-out;
+}
+.projects.show {
   opacity: 1;
+  transform: translateY(0);
 }
