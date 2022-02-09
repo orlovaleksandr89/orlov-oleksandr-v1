@@ -3,18 +3,29 @@
   flex-direction: column;
   width: 100%;
   max-width: 600px;
-  margin: 0 50px;
+
   padding: 20px;
   position: relative;
   isolation: isolate;
   z-index: 1;
   background: rgba(255, 255, 255, 0.3);
+  @media screen and (max-width: 768px) {
+    width: 90%;
+    padding: 30px;
+    font-size: 1.4rem;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 25px 20px;
+    font-size: 1.2rem;
+  }
+
   &_input_group {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
     color: var(--text-white-color);
     letter-spacing: 1px;
+
     .input {
       margin-top: 10px;
       font-size: 16px;
@@ -37,10 +48,16 @@
     }
   }
   &_error {
-    font-weight: 400;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    letter-spacing: 1.5px;
     color: red;
+    margin-top: 10px;
   }
   &_status {
+    font-weight: 700;
+    font-family: var(--font-sans);
+    letter-spacing: 1.5px;
     margin: 0 auto 0 0;
     color: #00c851;
   }
@@ -65,12 +82,22 @@ textarea.input {
     background: var(--hover-color);
     border: none;
     transform: scale(1);
-    // letter-spacing: 1.4px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+
     &:hover {
       transform: scale(1.05);
       color: var(--blue-color);
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 1.4rem;
+      &:hover {
+        transform: scale(1);
+        color: var(--blue-color);
+      }
+    }
+    @media screen and (max-width: 480px) {
+      font-size: 1.2rem;
     }
   }
 }

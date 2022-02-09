@@ -36,6 +36,9 @@
   transition: all 1s ease-in-out;
   &.up {
     transform: translateY(-65px);
+    @media screen and (max-width: 768px) {
+      transform: translateY(0);
+    }
   }
 }
 .logo {
@@ -156,8 +159,8 @@
   }
   .ul.active {
     width: 40%;
-    box-shadow: -10px 0px 30px -15px var(--blue-color);
-    background-color: #577590;
+    box-shadow: -10px 0px 30px -15px #577590;
+    background-color: var(--blue-color);
     transform: translateX(0);
   }
   .link {

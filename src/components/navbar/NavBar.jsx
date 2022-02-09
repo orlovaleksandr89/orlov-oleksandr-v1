@@ -22,6 +22,11 @@ function NavBar() {
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50)
   }
+  const logoClickHandler = (e) => {
+    e.preventDefault()
+    const el = document.querySelector('#home')
+    el.scrollIntoView()
+  }
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -42,7 +47,9 @@ function NavBar() {
             : `${styles.nav} ${styles.up}`
         }
       >
-        <div className={styles.logo}>Oleksandr Orlov</div>
+        <div className={styles.logo} onClick={logoClickHandler}>
+          Oleksandr Orlov
+        </div>
 
         <div className={styles.list}>
           <ul className={styles.ul}>

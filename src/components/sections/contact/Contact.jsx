@@ -34,6 +34,7 @@ function Contact() {
           setFormSubmitStatus={(value) => setFormSubmitStatus(value)}
         />
       </div>
+      {/* <div className={styles.footer}>I am footer</div> */}
     </section>
   )
 }

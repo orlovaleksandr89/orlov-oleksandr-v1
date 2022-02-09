@@ -5,17 +5,25 @@
   background-color: var(--bg-dark-color);
   color: var(--bg-light-color);
   min-height: 100vh;
+  // flex-direction: column;
 }
 
 .form_container {
   width: 100%;
-  margin: 0 40px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: var(--font-mono);
   font-weight: 500;
+  margin: 20px 50px;
+  @media screen and (max-width: 768px) {
+    margin: auto 50px;
+  }
+  @media screen and (max-width: 480px) {
+    margin: auto 0px;
+  }
 
   &_title {
     width: 100%;
@@ -45,3 +53,11 @@
     }
   }
 }
+// .footer {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100%;
+//   padding: 50px 50px;
+//   margin-top: auto;
+// }

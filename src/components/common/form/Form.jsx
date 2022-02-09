@@ -58,7 +58,10 @@ function Form({ submitHandle, loading, status, setFormSubmitStatus }) {
           name="email"
           id="email"
           className={styles.input}
-          {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/g })}
+          {...register('email', {
+            required: true,
+            pattern: /^\S+@\S+\.\S+$/g
+          })}
         />
         {errors.email && (
           <span className={styles.form_error}>Please enter a valid email</span>

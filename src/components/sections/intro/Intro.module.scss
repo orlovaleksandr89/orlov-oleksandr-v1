@@ -1,6 +1,8 @@
 .hello_wrapper {
   height: 100%;
+  width: 100%;
   font-size: 3.7rem;
+  text-align: center;
   font-family: var(--font-sans);
   font-weight: 700;
   background: linear-gradient(to left top, #7d118b, var(--hover-color));
@@ -28,7 +30,9 @@
   background: url('../../../assets/Hexagon.svg') no-repeat;
   background-size: cover;
   position: relative;
-  /* scroll-snap-align: start; */
+  @media screen and (max-width: 768px) {
+    scroll-snap-align: start;
+  }
 }
 
 .btn_wrapper {
@@ -50,7 +54,7 @@
     justify-content: center;
     cursor: pointer;
     opacity: 0;
-    transition: var(--main-transition);
+    transition: opacity 2s ease-in-out;
 
     &.show {
       opacity: 1;
@@ -58,6 +62,9 @@
     &:hover {
       animation: bounce 1s ease-in infinite;
     }
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }
 

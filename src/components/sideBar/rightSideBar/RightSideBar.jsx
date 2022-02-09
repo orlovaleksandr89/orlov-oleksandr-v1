@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './RightSideBar.module.css'
+import styles from './RightSideBar.module.scss'
 import { useInView } from 'react-intersection-observer'
 
 function RightSideBar() {
@@ -10,7 +10,9 @@ function RightSideBar() {
       ref={ref}
       className={inView ? styles.side : `${styles.side} ${styles.hide}`}
     >
-      <div className={styles.email}>orlovaleksandr89@gmail.com</div>
+      <div className={styles.email}>
+        <a href="orlovaleksandr89@gmail.com">orlovaleksandr89@gmail.com</a>
+      </div>
     </div>
   )
 }
