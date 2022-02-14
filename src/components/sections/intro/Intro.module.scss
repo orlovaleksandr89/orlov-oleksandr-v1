@@ -14,6 +14,9 @@
   flex-direction: column;
   .hello {
     margin: 0 0 auto 0;
+    width: fit-content;
+    max-width: 100vw;
+    padding: 0 15px;
     &:first-child {
       margin: auto 0 0 0;
     }

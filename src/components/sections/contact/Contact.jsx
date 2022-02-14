@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Form from '../../common/form'
 import styles from './Contact.module.scss'
 import axios from 'axios'
+import { icons } from '../../../config'
+import IconLink from '../../common/iconLink'
 
 function Contact() {
   const [isLoading, setIsLoading] = useState(false)
@@ -34,7 +36,16 @@ function Contact() {
           setFormSubmitStatus={(value) => setFormSubmitStatus(value)}
         />
       </div>
-      {/* <div className={styles.footer}>I am footer</div> */}
+      <div className={styles.footer}>
+        <h3>You can find me here</h3>
+        <ul className={styles.footer_ul}>
+          {icons.map((icon) => (
+            <li key={icon.href}>
+              <IconLink {...icon} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   )
 }

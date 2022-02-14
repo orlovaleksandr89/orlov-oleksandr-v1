@@ -22,7 +22,7 @@
     text-align: center;
   }
   @media screen and (max-width: 480px) {
-    padding: 30px 25px;
+    padding: 30px 15px;
   }
   &.show {
     opacity: 1;
@@ -107,6 +107,9 @@
     }
     @media screen and (max-width: 480px) {
       min-width: 300px;
+    }
+    @media screen and (max-width: 385px) {
+      min-width: 250px;
     }
   }
 }

@@ -18,8 +18,13 @@
   }
   @media screen and (max-width: 480px) {
     margin-top: 45px;
-    line-height: 1.3;
-    font-size: 1.7rem;
+    line-height: 1.2;
+    font-size: 1.3rem;
+  }
+  @media screen and (min-width: 376px) {
+    margin-top: 45px;
+    line-height: 1.2;
+    font-size: 1.3rem;
   }
 
   &::before {

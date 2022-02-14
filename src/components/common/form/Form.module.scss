@@ -3,7 +3,6 @@
   flex-direction: column;
   width: 100%;
   max-width: 600px;
-
   padding: 20px;
   position: relative;
   isolation: isolate;
@@ -12,11 +11,10 @@
   @media screen and (max-width: 768px) {
     width: 90%;
     padding: 30px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   @media screen and (max-width: 480px) {
     padding: 25px 20px;
-    font-size: 1.2rem;
   }
 
   &_input_group {
@@ -90,14 +88,11 @@ textarea.input {
       color: var(--blue-color);
     }
     @media screen and (max-width: 768px) {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       &:hover {
         transform: scale(1);
         color: var(--blue-color);
       }
-    }
-    @media screen and (max-width: 480px) {
-      font-size: 1.2rem;
     }
   }
 }
