@@ -38,7 +38,7 @@
     font-size: 2rem;
     display: flex;
     width: 100%;
-    margin: 30px 100px 50px;
+    margin: 30px auto 50px;
     justify-content: flex-start;
     align-items: center;
     position: relative;
@@ -57,6 +57,9 @@
       top: 5px;
       margin-left: 20px;
       background-color: var(--bg-light-color);
+    }
+    @media screen and (max-width: 768px) {
+      margin-top: auto;
     }
   }
 }
