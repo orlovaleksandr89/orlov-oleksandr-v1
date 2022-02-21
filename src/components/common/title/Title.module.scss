@@ -1,0 +1,32 @@
+.title {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  // padding: 0 0 15px 0;
+  position: relative;
+  color: var(--text-white-color);
+  &::before {
+    content: '\2022';
+    padding-right: 10px;
+    color: var(--bg-light-color);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: relative;
+    width: calc(100% / 2 - 120px);
+    height: 1px;
+    top: 5px;
+    margin-left: 20px;
+    background-color: var(--bg-light-color);
+  }
+
+  @media screen and (max-width: 425px) {
+    font-size: 1.5rem;
+  }
+}

@@ -1,20 +1,3 @@
-.page {
-  display: flex;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bg-dark-color);
-  color: var(--bg-light-color);
-  flex-direction: column;
-  padding: 0px 100px;
-  @media screen and (max-width: 768px) {
-    padding: 0px 50px;
-  }
-  @media screen and (max-width: 480px) {
-    padding: 0px 30px;
-  }
-}
-
 .form_container {
   width: 100%;
   height: 100%;
@@ -26,41 +9,10 @@
   font-weight: 500;
   margin: auto 0;
   @media screen and (max-width: 768px) {
-    margin: 80px 60px 0;
+    margin: 0 60px;
   }
   @media screen and (max-width: 480px) {
     margin: auto 0 0 0;
-  }
-
-  &_title {
-    font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 2rem;
-    display: flex;
-    width: 100%;
-    margin: 30px auto 50px;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    color: var(--text-white-color);
-    &::before {
-      content: '\2022';
-      padding-right: 10px;
-    }
-
-    &::after {
-      content: '';
-      display: block;
-      position: relative;
-      width: calc(100% / 2 - 120px);
-      height: 1px;
-      top: 5px;
-      margin-left: 20px;
-      background-color: var(--bg-light-color);
-    }
-    @media screen and (max-width: 768px) {
-      margin-top: auto;
-    }
   }
 }
 .footer {
@@ -68,7 +20,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: auto 0 50px;
+  margin-top: 20px;
   height: 100%;
   h3 {
     padding: 0 0 15px;
@@ -89,7 +41,7 @@
     padding: 0;
   }
 
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 }

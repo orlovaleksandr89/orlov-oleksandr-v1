@@ -8,9 +8,9 @@
   text-align: center;
   position: relative;
   background-color: transparent;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.7s ease-in-out;
   isolation: isolate;
-  z-index: -1;
+  opacity: 0;
   overflow: hidden;
 
   @media screen and (max-width: 767px) {
@@ -99,6 +99,9 @@
     transform: scale(1);
     transition: all 0.3s ease-in-out;
   }
+}
+.card.show {
+  opacity: 1;
 }
 .links {
   display: flex;

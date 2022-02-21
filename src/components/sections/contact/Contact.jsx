@@ -4,6 +4,8 @@ import styles from './Contact.module.scss'
 import axios from 'axios'
 import { icons } from '../../../config'
 import IconLink from '../../common/iconLink'
+import ContainerLayout from '../../common/containerLayout/ContainerLayout'
+import Title from '../../common/title/Title'
 
 function Contact() {
   const [isLoading, setIsLoading] = useState(false)
@@ -26,9 +28,9 @@ function Contact() {
     }
   }
   return (
-    <section className={styles.page} id="contact">
+    <ContainerLayout id="contact">
+      <Title title="Get in touch" />
       <div className={styles.form_container}>
-        <h2 className={styles.form_container_title}>Get in touch</h2>
         <Form
           submitHandle={submitHandle}
           loading={isLoading}
@@ -46,7 +48,7 @@ function Contact() {
           ))}
         </ul>
       </div>
-    </section>
+    </ContainerLayout>
   )
 }
 

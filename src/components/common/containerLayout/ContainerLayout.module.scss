@@ -6,10 +6,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    min-height: 100%;
+  }
 }
 
 .section {
-  padding: 0 100px;
+  padding: 50px 100px;
   margin: auto 0;
   height: 100%;
   width: 100%;
@@ -19,10 +22,10 @@
   align-items: center;
 
   @media screen and (max-width: 768px) {
-    padding: 40px 40px;
+    padding: 0px 40px;
     text-align: center;
   }
   @media screen and (max-width: 480px) {
-    padding: 30px 15px;
+    padding: 0px 15px;
   }
 }

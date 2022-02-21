@@ -12,6 +12,7 @@ import { BsTelegram } from 'react-icons/bs'
 import React from 'react'
 import redfoxImg from './assets/redfox.jpg'
 import ptvlImg from './assets/ptvl.jpg'
+import fastCompanyImg from './assets/fast_company.jpg'
 
 export const links = [
   { title: 'Home', path: '#home' },
@@ -65,6 +66,15 @@ export const projects = [
     img: redfoxImg,
     stack: 'MongoDB, Node, React, Express',
     description:
-      'This project was build with MERN stack. During this project i learned how to work with Mongoose, JWT, Redux toolkit... That was fun'
+      'This project was build with MERN stack. During this project i learned how to work with Mongoose, JWT, Redux toolkit...'
+  },
+  {
+    hrefOnline: 'https://fast-company-mern.herokuapp.com/',
+    hrefGit: 'https://github.com/orlovaleksandr89/fast_company',
+    title: 'Social app demo project',
+    img: fastCompanyImg,
+    stack: 'MongoDB, Node, React, Express',
+    description:
+      'In this project i learned how to work with folder structure and improve my knowlage of jwt tokens and how properly work with them.'
   }
 ]
