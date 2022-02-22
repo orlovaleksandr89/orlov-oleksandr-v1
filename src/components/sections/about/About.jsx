@@ -50,6 +50,16 @@ function About() {
             alt="Oleksandr Orlov image"
             className={styles.hero_img}
           />
+          <div className={styles.resume}>
+            <a
+              href="/resume.pdf"
+              className={styles.resume_button}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Grab a Resume
+            </a>
+          </div>
         </div>
       </div>
     </ContainerLayout>

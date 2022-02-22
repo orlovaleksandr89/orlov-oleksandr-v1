@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
     flex-direction: column-reverse;
@@ -31,6 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 40%;
   height: 100%;
   position: relative;
@@ -79,6 +81,31 @@
       @media screen and (max-width: 768px) {
         font-size: 1.2rem;
       }
+    }
+  }
+}
+
+.resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 30px;
+  &_button {
+    padding: 0.75em 1.55em 0.75em;
+    border-radius: 100vw;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-white-color);
+    font-family: var(--font-sans);
+    background: var(--hover-color);
+    border: none;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(0);
+      color: var(--text-white-color);
     }
   }
 }

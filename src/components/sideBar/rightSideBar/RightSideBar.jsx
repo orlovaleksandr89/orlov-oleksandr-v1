@@ -11,7 +11,9 @@ function RightSideBar() {
       className={inView ? styles.side : `${styles.side} ${styles.hide}`}
     >
       <div className={styles.email}>
-        <a href="orlovaleksandr89@gmail.com">orlovaleksandr89@gmail.com</a>
+        <a href="mailto:orlovaleksandr89@gmail.com">
+          orlovaleksandr89@gmail.com
+        </a>
       </div>
     </div>
   )
