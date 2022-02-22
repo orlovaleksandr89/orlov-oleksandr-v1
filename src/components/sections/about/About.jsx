@@ -1,22 +1,15 @@
 import React from 'react'
 import styles from './About.module.scss'
-import { useInView } from 'react-intersection-observer'
 import img from '../../../assets/me.jpg'
 import { skills } from '../../../config'
 import Title from '../../common/title/Title'
 import ContainerLayout from '../../common/containerLayout/ContainerLayout'
 
 function About() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    treshold: 0,
-    rootMargin: '-50%'
-  })
-  console.log(inView)
   return (
     <ContainerLayout id="about">
       <Title title={'About me'} />
-      <div ref={ref} className={styles.inner}>
+      <div className={styles.inner}>
         <div className={styles.about}>
           <p>
             Hello, my name is Oleksandr. I am a passionate self-taught frontend

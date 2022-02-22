@@ -10,7 +10,6 @@ function ProjectCard({ hrefOnline, title, description, hrefGit, img, stack }) {
     rootMargin: '-70px',
     triggerOnce: true
   })
-  console.log(inView)
   return (
     <>
       <div

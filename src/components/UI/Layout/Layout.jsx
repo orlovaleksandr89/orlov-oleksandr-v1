@@ -1,14 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import NavBar from '../../navbar'
-import { LeftSideBar, RightSideBar } from '../../sideBar'
+import { LeftSideBar } from '../../sideBar'
 
 function Layout({ children }) {
   return (
     <main>
       <NavBar />
       <LeftSideBar />
-      <RightSideBar />
       {children}
     </main>
   )

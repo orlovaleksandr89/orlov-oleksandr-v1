@@ -9,7 +9,8 @@ module.exports = {
       jsx: true
     },
     sourceType: 'module',
-    ecmaVersion: 2018
+    ecmaVersion: 2018,
+    allowImportExportEverywhere: true
   },
   plugins: ['react'],
   rules: {

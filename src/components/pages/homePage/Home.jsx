@@ -1,16 +1,20 @@
-import React from 'react'
-import Contact from '../../sections/contact/Contact'
+import React, { Suspense } from 'react'
 import Intro from '../../sections/intro'
 import About from '../../sections/about'
-import Projects from '../../sections/projects/Projects'
+const Projects = React.lazy(() => import('../../sections/projects/Projects'))
+const Contact = React.lazy(() => import('../../sections/contact/Contact'))
 
 function Home() {
   return (
     <>
       <Intro />
       <About />
-      <Projects />
-      <Contact />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Projects />
+      </Suspense>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Contact />
+      </Suspense>
     </>
   )
 }
